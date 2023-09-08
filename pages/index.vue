@@ -1,107 +1,127 @@
 <template>
-    <div>
-        <div v-if="currentLevel === 0">
+    <div class="container">
+        <div class="test-intro" v-if="currentLevel === 0">
             <h1>나와 잘 어울리는 디저트는?</h1>
-            <el-button type="info" @click="gameStart()" round>시작하기</el-button>
+            <img src="/images/sweets.png" width="300"/>
+            <el-button color="#f36fbb" @click="gameStart()" round>시작하기</el-button>
         </div>
-        <div v-else-if="currentLevel === 1">
-            <div class="demo-progress">
-                <el-progress :show-text="false" :stroke-width="26" :percentage="100/8" />
-            </div>
+        <div class="question-list" v-else-if="currentLevel === 1">
             <h2>{{ mbtiTestTitle }}</h2>
+            <div class="demo-progress">
+                <el-progress color="#f36fbb" :show-text="false" :stroke-width="26" :percentage="100/8" />
+            </div>
             <h3>Q1. {{ answerList[0].title }}</h3>
-            <el-button type="primary" v-for="(item, index) in answerList[0].answers"
-                       @click="nextLevel(index)" round>A{{ index + 1 }}. {{ item.answer }}</el-button>
-        </div>
-        <div v-else-if="currentLevel === 2">
-            <div class="demo-progress">
-                <el-progress :show-text="false" :stroke-width="26" :percentage="100/8*2" />
+            <div class="answer-list">
+                <el-button color="#eeb1d4" v-for="(item, index) in answerList[0].answers"
+                           @click="nextLevel(index)" round> {{ item.answer }}</el-button>
             </div>
-            <h2>{{ mbtiTestTitle }}</h2>
-            <h3>Q2.{{ answerList[1].title }}</h3>
-            <el-button type="primary" v-for="(item, index) in answerList[1].answers"
-                       @click="nextLevel(index)" round>A{{ index + 1 }}.{{ item.answer }}</el-button>
+
         </div>
-        <div v-else-if="currentLevel === 3">
+        <div class="question-list" v-else-if="currentLevel === 2">
+            <h2>{{ mbtiTestTitle }}</h2>
             <div class="demo-progress">
-                <el-progress :show-text="false" :stroke-width="26" :percentage="100/8*3" />
+                <el-progress color="#f36fbb" :show-text="false" :stroke-width="26" :percentage="100/8*2" />
             </div>
-            <h2>{{ mbtiTestTitle }}</h2>
-            <h3>Q3.{{ answerList[2].title }}</h3>
-            <el-button type="primary" v-for="(item, index) in answerList[2].answers"
-                       @click="nextLevel(index)" round>A{{ index + 1 }}.{{ item.answer }}</el-button>
+            <h3>Q2. {{ answerList[1].title }}</h3>
+            <div class="answer-list">
+                <el-button color="#eeb1d4" v-for="(item, index) in answerList[1].answers"
+                           @click="nextLevel(index)" round>{{ item.answer }}</el-button>
+            </div>
         </div>
-        <div v-else-if="currentLevel === 4">
+        <div class="question-list" v-else-if="currentLevel === 3">
+            <h2>{{ mbtiTestTitle }}</h2>
             <div class="demo-progress">
-                <el-progress :show-text="false" :stroke-width="26" :percentage="100/8*4" />
+                <el-progress color="#f36fbb" :show-text="false" :stroke-width="26" :percentage="100/8*3" />
             </div>
-            <h2>{{ mbtiTestTitle }}</h2>
-            <h3>Q4.{{ answerList[3].title }}</h3>
-            <el-button type="primary" v-for="(item, index) in answerList[3].answers"
-                       @click="nextLevel(index)" round>A{{ index + 1 }}.{{ item.answer }}</el-button>
+            <h3>Q3. {{ answerList[2].title }}</h3>
+            <div class="answer-list">
+                <el-button color="#eeb1d4" v-for="(item, index) in answerList[2].answers"
+                           @click="nextLevel(index)" round>{{ item.answer }}</el-button>
+            </div>
         </div>
-        <div v-else-if="currentLevel === 5">
+        <div class="question-list" v-else-if="currentLevel === 4">
+            <h2>{{ mbtiTestTitle }}</h2>
             <div class="demo-progress">
-                <el-progress :show-text="false" :stroke-width="26" :percentage="100/8*5" />
+                <el-progress color="#f36fbb" :show-text="false" :stroke-width="26" :percentage="100/8*4" />
             </div>
-            <h2>{{ mbtiTestTitle }}</h2>
-            <h3>Q5.{{ answerList[4].title }}</h3>
-            <el-button type="primary" v-for="(item, index) in answerList[4].answers"
-                       @click="nextLevel(index)" round>A{{ index + 1 }}.{{ item.answer }}</el-button>
+            <h3>Q4. {{ answerList[3].title }}</h3>
+            <div class="answer-list">
+                <el-button color="#eeb1d4" v-for="(item, index) in answerList[3].answers"
+                           @click="nextLevel(index)" round>{{ item.answer }}</el-button>
+            </div>
+
         </div>
-        <div v-else-if="currentLevel === 6">
+        <div class="question-list" v-else-if="currentLevel === 5">
+            <h2>{{ mbtiTestTitle }}</h2>
             <div class="demo-progress">
-                <el-progress :show-text="false" :stroke-width="26" :percentage="100/8*6" />
+                <el-progress color="#f36fbb" :show-text="false" :stroke-width="26" :percentage="100/8*5" />
             </div>
-            <h2>{{ mbtiTestTitle }}</h2>
-            <h3>Q6.{{ answerList[5].title }}</h3>
-            <el-button type="primary" v-for="(item, index) in answerList[5].answers"
-                       @click="nextLevel(index)" round>A{{ index + 1 }}.{{ item.answer }}</el-button>
+            <h3>Q5. {{ answerList[4].title }}</h3>
+            <div class="answer-list">
+                <el-button color="#eeb1d4" v-for="(item, index) in answerList[4].answers"
+                           @click="nextLevel(index)" round>{{ item.answer }}</el-button>
+            </div>
+
         </div>
-        <div v-else-if="currentLevel === 7">
+        <div class="question-list" v-else-if="currentLevel === 6">
+            <h2>{{ mbtiTestTitle }}</h2>
             <div class="demo-progress">
-                <el-progress :show-text="false" :stroke-width="26" :percentage="100/8*7" />
+                <el-progress color="#f36fbb" :show-text="false" :stroke-width="26" :percentage="100/8*6" />
             </div>
-            <h2>{{ mbtiTestTitle }}</h2>
-            <h3>Q7.{{ answerList[6].title }}</h3>
-            <el-button type="primary" v-for="(item, index) in answerList[6].answers"
-                       @click="nextLevel(index)" round>A{{ index + 1 }}.{{ item.answer }}</el-button>
+            <h3>Q6. {{ answerList[5].title }}</h3>
+            <div class="answer-list">
+                <el-button color="#eeb1d4" v-for="(item, index) in answerList[5].answers"
+                           @click="nextLevel(index)" round>{{ item.answer }}</el-button>
+            </div>
+
         </div>
-        <div v-else-if="currentLevel === 8">
+        <div class="question-list" v-else-if="currentLevel === 7">
+            <h2>{{ mbtiTestTitle }}</h2>
             <div class="demo-progress">
-                <el-progress :show-text="false" :stroke-width="26" :percentage="100/8*8" />
+                <el-progress color="#f36fbb" :show-text="false" :stroke-width="26" :percentage="100/8*7" />
             </div>
-            <h2>{{ mbtiTestTitle }}</h2>
-            <h3>Q8.{{ answerList[7].title }}</h3>
-            <el-button type="primary" v-for="(item, index) in answerList[7].answers"
-                       @click="nextLevel(index)" round>A{{ index + 1 }}.{{ item.answer }}</el-button>
+            <h3>Q7. {{ answerList[6].title }}</h3>
+            <div class="answer-list">
+                <el-button color="#eeb1d4" v-for="(item, index) in answerList[6].answers"
+                           @click="nextLevel(index)" round>{{ item.answer }}</el-button>
+            </div>
         </div>
-        <div v-else-if="currentLevel === 9">
+        <div class="question-list" v-else-if="currentLevel === 8">
+            <h2>{{ mbtiTestTitle }}</h2>
+            <div class="demo-progress">
+                <el-progress color="#f36fbb" :show-text="false" :stroke-width="26" :percentage="100/8*8" />
+            </div>
+            <h3>Q8. {{ answerList[7].title }}</h3>
+            <div class="answer-list">
+                <el-button color="#eeb1d4" v-for="(item, index) in answerList[7].answers"
+                           @click="nextLevel(index)" round>{{ item.answer }}</el-button>
+            </div>
+
+        </div>
+        <div class="test-result" v-else-if="currentLevel === 9">
             <h2>{{ mbtiTestTitle }} </h2>
             <img :src="resultImg" alt="resultRankTitle" width="200"/>
-            <h3>{{ resultRankTitle }}</h3>
-            <div>
+            <h2>{{ resultRankTitle }}</h2>
+            <div class="result-description">
                 <ul>
                     <li v-for="(description,index) in resultRankContents " :key="index">
                         {{description}}
                     </li>
                 </ul>
             </div>
-            <div>
-                <div>
-                    <h4>best</h4>
+            <div class="combination">
+                <div class="best-cmb">
+                    <h3>best</h3>
                     <p>{{resultBestCombination[0]}}</p>
                     <p>{{resultBestCombination[1]}}</p>
                 </div>
-                <div>
-                    <h4>worst</h4>
+                <div class="worst-cmb">
+                    <h3>worst</h3>
                     <p>{{resultWorstCombination[0]}}</p>
                     <p>{{resultWorstCombination[1]}}</p>
                 </div>
-
             </div>
-            <div><el-button type="success" @click="gameReset()" round>다시하기</el-button>
-        </div>
+                <el-button type="success" @click="gameReset()" round>다시하기</el-button>
     </div>
     </div>
 </template>
@@ -169,7 +189,7 @@ export default {
                 },
                 {   //ENTJ
                     mbtiResult: 'ENTJ',
-                    dessertName: '내꿈은 지구 정복! 도넛 ',
+                    dessertName: '내꿈은 지구 정복! 도넛',
                     dessertImg: '/images/009-donut.png',
                     dessertDescription: ['난 멋져 내가 최고 내 말이 다 맞음','빨리빨리 효율적으로 완벽하게','승부욕이 엄청 강해요','연애도 효율적으로'],
                     bestCombination: ['감성 끝판왕 츄러스','내 안의 우주를 배회 중, 프레첼'],
@@ -358,7 +378,6 @@ export default {
             this.sensingRankValue >= 11 ? this.MBTITestValue += "S" : this.MBTITestValue += "N"
             this.feelingRankValue >= 11 ? this.MBTITestValue += "F" : this.MBTITestValue += "T"
             this.judgingRankValue >= 11 ? this.MBTITestValue += "J" : this.MBTITestValue += "P"
-            console.log(this.MBTITestValue)
             for (let i = 0; i < this.resultList.length; i++) {
                 if (this.resultList[i].mbtiResult === this.MBTITestValue) {
                     this.resultImg = this.resultList[i].dessertImg

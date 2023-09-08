@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbit&display=swap');
+*{
+    font-family: 'Orbit', sans-serif;
+}
+/* 컴퓨터화면 */
+
+.container {
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+/* 첫 화면 */
+
+.test-intro{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+
+/* 질문 */
+
+.question-list {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+
+/* 결과 */
+

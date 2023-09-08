@@ -1,0 +1,59 @@
+/* 첫 화면 */
+
+.test-intro > img {
+    margin-bottom : 50px;
+}
+
+.test-intro > button {
+    width: 150px;
+    height: 40px;
+}
+
+/* 질문 */
+
+.demo-progress {
+    width: 70%;
+    margin-bottom: 50px;
+}
+
+.answer-list {
+    display: flex;
+    flex-flow: column;
+}
+
+.answer-list > button {
+    margin: 10px;
+    height: 40px;
+}
+
+/* 결과 */
+
+.test-result img {
+    margin: 20px 0 20px 0;
+}
+.result-description ul{
+    padding: 0;
+}
+.result-description ul li {
+    list-style: none;
+    text-align: center;
+}
+
+.combination {
+    display: flex;
+    justify-content: center;
+}
+
+.best-cmb {
+    padding: 0 20px 0 20px ;
+}
+
+.worst-cmb {
+    padding: 0 20px 0 20px;
+}
+
+.test-result > button {
+    margin: 20px 0 20px 0 ;
+    width: 150px;
+    height: 40px;
+}

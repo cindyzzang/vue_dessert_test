@@ -7,7 +7,8 @@ export default defineNuxtConfig({
     css: [
         '~/assets/styles/layout.css',
         '~/assets/styles/contents.css',
-        '~/assets/styles/scss/index.scss'
+        '~/assets/styles/scss/index.scss',
+
     ],
     components: [
         {
