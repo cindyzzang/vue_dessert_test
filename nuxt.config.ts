@@ -20,6 +20,22 @@ export default defineNuxtConfig({
         transpile: lifecycle === "build" ? ["element-plus"] : [],
     },
     app: {
+        head : {
+            "title" : '나와 잘 어울리는 디저트는?',
+            "meta": [
+                {
+                    "name": "viewport",
+                    "content": "width=device-width, initial-scale=1"
+                },
+                {
+                    "charset": "utf-8"
+                }
+            ],
+           "link" : [
+               { rel: 'icon', type: 'image/png', href: './images/sweets.png' }
+           ]
+
+        },
         baseURL: '/vue_dessert_test/', // baseURL: '/<repository>/'
         buildAssetsDir: 'assets', // don't use "_" at the begining of the folder name to avoids nojkill conflict
     }

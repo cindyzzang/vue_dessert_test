@@ -1,3 +1,17 @@
+/* 스마트폰 화면 */
+@media (max-width: 1000px){
+    /* 첫 화면 */
+    .test-intro h1 {
+        font-size: 20px;
+    }
+    .test-intro img {
+        width: 200px;
+    }
+
+
+}
+
+/* PC 화면 */
 /* 첫 화면 */
 
 .test-intro > img {
@@ -45,10 +59,12 @@
 }
 
 .best-cmb {
+    width: 240px;
     padding: 0 20px 0 20px ;
 }
 
 .worst-cmb {
+    width: 240px;
     padding: 0 20px 0 20px;
 }
 
