@@ -4,6 +4,7 @@ const lifecycle = process.env.npm_lifecycle_event;
 export default defineNuxtConfig({
     experimental: { payloadExtraction: false },
     modules: ['@element-plus/nuxt'],
+
     css: [
         '~/assets/styles/layout.css',
         '~/assets/styles/contents.css',

@@ -67,9 +67,8 @@
     width: 240px;
     padding: 0 20px 0 20px;
 }
-
-.test-result > button {
-    margin: 20px 0 20px 0 ;
-    width: 150px;
-    height: 40px;
+button {
+    margin: 20px 10px 20px 10px ;
+    width: 100px;
 }
+
