@@ -238,9 +238,11 @@ export default {
             this.judgingRankValue >= 11 ? this.MBTITestValue += "J" : this.MBTITestValue += "P"
                 },
         goToResult(){
+            const router = useRouter();
             const routePath = this.resultMapping[this.MBTITestValue];
             if (routePath) {
-                this.$router.push({ path: `/${routePath}` });
+                console.log(routePath);
+                router.push({ path: `/${routePath}` });
             }
         }
             }

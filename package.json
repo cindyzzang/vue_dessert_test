@@ -7,7 +7,7 @@
     "preview": "nuxi preview",
     "postinstall": "nuxi prepare",
     "predeploy": "npm run generate",
-    "deploy": "gh-pages -d dist"
+    "deploy": "touch ./dist/.nojekyll && touch ./.output/.nojekyll && gh-pages -d dist"
   },
   "devDependencies": {
     "@element-plus/nuxt": "^1.0.5",
